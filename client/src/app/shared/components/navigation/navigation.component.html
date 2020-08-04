@@ -1,9 +1,17 @@
 <div class="container-fluid" *ngIf="nav.visible">
+  <div class="row flex-column">
+    <div class="col link align-self-end" routerLink="">Home</div>
+  </div>
   <div class="row">
-    <div class="item" class="col" routerLink="">Home</div>
-    <div class="item" class="col" *ngIf="nav.current !== 'story'">Story</div>
-    <div class="item" class="col">Art</div>
-    <div class="item" class="col">Design</div>
-    <div class="item" class="col">Shop</div>
+    <div class="col link">Story</div>
+  </div>
+  <div class="row">
+    <div class="col link">Art</div>
+  </div>
+  <div class="row flex-column">
+    <div class="col link align-self-end">Design</div>
+  </div>
+  <div class="row">
+    <div class="col link">Shop</div>
   </div>
 </div>

@@ -1,22 +1,32 @@
 
-// .container-fluid
-//   min-height: 20vh
+.container-fluid
+  width: 30vw
 
-// .row
-//   min-height: 20vh
+.row
+  height: 20vh
 
-.col
-  min-height: 10vh
+.link
+  max-width: 15vw
+  min-height: 100%
   background-color: rgba(0, 0, 0, 0.5)
-  height: 100%
-  min-width: 150px
   display: flex
   align-content: center
   align-items: center
   justify-content: center
   font-family: 'Rowdies', cursive
 
-.col:hover
+.link:hover
   background-color: rgba(0, 0, 0, 0.8)
   color: rgba(255, 255, 255)
   cursor: pointer
+
+@keyframes test
+  0%
+    max-width: 5vw
+  100%
+    max-width: 15vw
+
+@media screen and ( min-width: 500px )
+  .link
+    animation-name: test
+    animation-duration: 2s
