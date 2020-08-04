@@ -1,1 +1,9 @@
-<p>navigation works!</p>
+<div class="container-fluid" *ngIf="nav.visible">
+  <div class="row">
+    <div class="item" class="col" routerLink="">Home</div>
+    <div class="item" class="col" *ngIf="nav.current !== 'story'">Story</div>
+    <div class="item" class="col">Art</div>
+    <div class="item" class="col">Design</div>
+    <div class="item" class="col">Shop</div>
+  </div>
+</div>
