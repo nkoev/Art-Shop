@@ -7,6 +7,9 @@ import { NavBarService } from 'src/app/shared/services/nav-bar.service';
   styleUrls: ['./welcome.component.sass'],
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
+  menu = false;
+  store = false;
+
   constructor(private nav: NavBarService) {}
 
   ngOnInit(): void {
@@ -14,5 +17,13 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.nav.show();
+  }
+
+  showMenu() {
+    this.menu = true;
+  }
+
+  showStore() {
+    this.store = true;
   }
 }

@@ -1,10 +1,42 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="item" class="col" routerLink="/story">Story</div>
-    <div class="item" class="col" routerLink="/gallery">Art</div>
+    <div class="col" id="ptp" (mouseover)="showMenu()">
+      <span id="short">PTP</span>
+      <span id="long">PTPETROV</span>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
   </div>
   <div class="row">
-    <div class="item" class="col">Design</div>
-    <div class="item" class="col">Shop</div>
+    <div class="col"></div>
+    <div class="col">
+      <div
+        class="menu"
+        *ngIf="menu"
+        (mouseover)="showStore()"
+        routerLink="gallery"
+      >
+        ART
+      </div>
+    </div>
+    <div class="col">
+      <div id="store" *ngIf="store">
+        <span id="text-store">STORE</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="menu" *ngIf="menu">
+        ADV
+      </div>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
   </div>
 </div>
