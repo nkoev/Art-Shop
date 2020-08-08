@@ -50,10 +50,6 @@
   animation-name: fade
   animation-duration: 3s
 
-#text-store
-  animation-name: blink
-  animation-duration: 10s
-
 @keyframes fade
   0%
     opacity: 0%
@@ -65,3 +61,7 @@
     display: inline-block
   #short
     display: none
+
+@media screen and ( max-width: 500px )
+  #text-store
+    transform: rotate(270deg)
