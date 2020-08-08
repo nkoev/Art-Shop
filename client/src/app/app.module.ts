@@ -5,10 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
-import { StoryComponent } from './pages/story/story.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, NavigationComponent, StoryComponent],
+  declarations: [
+    AppComponent,
+    WelcomeComponent,
+    NavigationComponent,
+    AboutComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

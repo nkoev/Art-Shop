@@ -20,14 +20,14 @@
       </div>
     </div>
     <div class="col">
-      <div id="store" *ngIf="store">
+      <div id="store" *ngIf="store" routerLink="store">
         <span id="text-store">STORE</span>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <div class="menu" *ngIf="menu">
+      <div class="menu" *ngIf="menu" routerLink="adv">
         ADV
       </div>
     </div>
@@ -37,6 +37,10 @@
   <div class="row">
     <div class="col"></div>
     <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">
+      <div class="menu" *ngIf="menu" routerLink="about">
+        About
+      </div>
+    </div>
   </div>
 </div>

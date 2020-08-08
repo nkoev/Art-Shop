@@ -26,11 +26,17 @@ export class ItemsService {
       { name: 'Great Sculpture', image: '../../../assets/images/test1.jpg' },
       { name: 'Another Sculpture', image: '../../../assets/images/test1.jpg' },
       { name: 'Awesome Sculpture', image: '../../../assets/images/test1.jpg' },
+      { name: 'Great Sculpture', image: '../../../assets/images/test1.jpg' },
+      { name: 'Another Sculpture', image: '../../../assets/images/test1.jpg' },
+      { name: 'Awesome Sculpture', image: '../../../assets/images/test1.jpg' },
     ]);
   }
 
   getCollages(): Promise<Item[]> {
     return Promise.resolve([
+      { name: 'Great Collage', image: '../../../assets/images/test1.jpg' },
+      { name: 'Another Collage', image: '../../../assets/images/test1.jpg' },
+      { name: 'Awesome Collage', image: '../../../assets/images/test1.jpg' },
       { name: 'Great Collage', image: '../../../assets/images/test1.jpg' },
       { name: 'Another Collage', image: '../../../assets/images/test1.jpg' },
       { name: 'Awesome Collage', image: '../../../assets/images/test1.jpg' },
