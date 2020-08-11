@@ -1,5 +1,5 @@
-<div
-  class="container-fluid home"
-  [routerLink]="nav.link"
-  *ngIf="nav.visible"
-></div>
+<div class="container-fluid home" [routerLink]="nav.link" *ngIf="nav.visible">
+  <button class="btn btn-primary" (click)="logout($event)" *ngIf="isLoggedIn">
+    Logout
+  </button>
+</div>

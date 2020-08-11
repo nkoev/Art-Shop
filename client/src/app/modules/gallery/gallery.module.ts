@@ -4,9 +4,10 @@ import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryPageComponent } from './components/gallery-page/gallery-page.component';
 import { ItemBoxComponent } from './components/item-box/item-box.component';
 import { ItemPageComponent } from './components/item-page/item-page.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 @NgModule({
-  declarations: [GalleryPageComponent, ItemBoxComponent, ItemPageComponent],
+  declarations: [GalleryPageComponent, ItemBoxComponent, ItemPageComponent, EditItemComponent],
   imports: [GalleryRoutingModule, CommonModule],
 })
 export class GalleryModule {}
