@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { AboutComponent } from './pages/about/about.component';
-import { SharedModule } from './shared/modules/shared/shared.module';
+import { SharedModule } from './shared/modules/shared.module';
+import { FirestoreModule } from './shared/modules/firestore.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { SharedModule } from './shared/modules/shared/shared.module';
     NavigationComponent,
     AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, FirestoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })

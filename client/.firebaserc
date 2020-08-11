@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ptpetrov-14468": {
+      "hosting": {
+        "art-shop": [
+          "ptpetrov-14468"
+        ]
+      }
+    }
+  }
+}
