@@ -9,7 +9,5 @@ import { NavBarService } from 'src/app/shared/services/nav-bar.service';
 export class AboutComponent implements OnInit {
   constructor(private nav: NavBarService) {}
 
-  ngOnInit(): void {
-    this.nav.setCurrent('story');
-  }
+  ngOnInit(): void {}
 }

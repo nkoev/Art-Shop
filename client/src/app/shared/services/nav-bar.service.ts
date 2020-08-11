@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class NavBarService {
   public visible = true;
-  public current;
+  public link = '';
 
   constructor() {}
   show() {
@@ -14,7 +14,7 @@ export class NavBarService {
   hide() {
     this.visible = false;
   }
-  setCurrent(name: string) {
-    this.current = name;
+  setLink(path: string) {
+    this.link = path;
   }
 }

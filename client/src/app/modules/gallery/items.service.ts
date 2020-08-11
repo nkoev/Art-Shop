@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Item } from 'src/app/models/item';
+import { items } from 'src/app/db';
 
 @Injectable({
   providedIn: 'root',
@@ -7,39 +8,11 @@ import { Item } from 'src/app/models/item';
 export class ItemsService {
   constructor() {}
 
-  getPanes(): Promise<Item[]> {
-    return Promise.resolve([
-      { name: 'Great Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Great Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Great Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Picture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Picture', image: '../../../assets/images/test1.jpg' },
-    ]);
+  getItems(): Promise<Item[]> {
+    return Promise.resolve(items);
   }
 
-  getSculptures(): Promise<Item[]> {
-    return Promise.resolve([
-      { name: 'Great Sculpture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Sculpture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Sculpture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Great Sculpture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Sculpture', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Sculpture', image: '../../../assets/images/test1.jpg' },
-    ]);
-  }
-
-  getCollages(): Promise<Item[]> {
-    return Promise.resolve([
-      { name: 'Great Collage', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Collage', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Collage', image: '../../../assets/images/test1.jpg' },
-      { name: 'Great Collage', image: '../../../assets/images/test1.jpg' },
-      { name: 'Another Collage', image: '../../../assets/images/test1.jpg' },
-      { name: 'Awesome Collage', image: '../../../assets/images/test1.jpg' },
-    ]);
+  getItem(id: number): Promise<Item> {
+    return Promise.resolve(items[id]);
   }
 }
