@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { AboutComponent } from './pages/about/about.component';
+import { SharedModule } from './shared/modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AboutComponent } from './pages/about/about.component';
     NavigationComponent,
     AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
