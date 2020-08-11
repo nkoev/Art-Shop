@@ -1,5 +1,10 @@
 h1
-  font-size: 3rem
+  font-size: 15vw
+
+.title
+  top: 0
+  background-color: white
+  padding-bottom: 2vh
 
 .category
   text-align: center
@@ -21,7 +26,11 @@ h1
 .item-image
   width: 80%
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 578px )
+  h1
+    font-size: 5vw
+  .title
+    position: sticky
   .category
     height: 87vh
     overflow: auto

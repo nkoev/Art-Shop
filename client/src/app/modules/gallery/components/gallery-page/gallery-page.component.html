@@ -1,29 +1,26 @@
 <div class="row main">
   <div class="col-sm-4 category">
-    <h1>Panes</h1>
+    <div class="title">
+      <h1>Panes</h1>
+    </div>
     <div class="row" *ngFor="let pane of panes">
-      {{ pane.name }}
-      <div class="row">
-        <img [src]="pane.image" class="item-image" />
-      </div>
+      <app-item-box [item]="pane"></app-item-box>
     </div>
   </div>
   <div class="col-sm-4 category">
-    <h1>Sculptures</h1>
+    <div class="title">
+      <h1>Sculptures</h1>
+    </div>
     <div class="row" *ngFor="let sculp of sculptures">
-      {{ sculp.name }}
-      <div class="row">
-        <img [src]="sculp.image" class="item-image" />
-      </div>
+      <app-item-box [item]="sculp"></app-item-box>
     </div>
   </div>
   <div class="col-sm-4 category">
-    <h1>Collage</h1>
+    <div class="title">
+      <h1>Collage</h1>
+    </div>
     <div class="row" *ngFor="let collage of collages">
-      {{ collage.name }}
-      <div class="row">
-        <img [src]="collage.image" class="item-image" />
-      </div>
+      <app-item-box [item]="collage"></app-item-box>
     </div>
   </div>
 </div>
