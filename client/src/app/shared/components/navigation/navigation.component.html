@@ -1,4 +1,7 @@
 <div class="container-fluid home" [routerLink]="nav.link" *ngIf="nav.visible">
+  <button class="btn btn-primary" *ngIf="isLoggedIn" (click)="openAddDialog()">
+    Add Items
+  </button>
   <button class="btn btn-primary" (click)="logout($event)" *ngIf="isLoggedIn">
     Logout
   </button>

@@ -22,4 +22,6 @@ export class NavigationComponent implements OnInit {
     event.stopPropagation();
     this.auth.logout();
   }
+
+  openAddDialog() {}
 }
