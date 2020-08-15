@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
 import { AuthService } from '../../services/auth.service';
+import { ModalService } from '../../services/modal.service';
+import { AddItemComponent } from '../add-item/add-item.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +14,12 @@ import { AuthService } from '../../services/auth.service';
 export class NavigationComponent implements OnInit {
   isLoggedIn: boolean;
 
-  constructor(public nav: NavBarService, private auth: AuthService) {}
+  constructor(
+    public nav: NavBarService,
+    private auth: AuthService,
+    private modalService: NgbModal,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.auth.isLoggedIn$.subscribe((res) => {
@@ -23,5 +32,8 @@ export class NavigationComponent implements OnInit {
     this.auth.logout();
   }
 
-  openAddDialog() {}
+  openAddDialog(event) {
+    event.stopPropagation();
+    this.modalService.open(AddItemComponent);
+  }
 }

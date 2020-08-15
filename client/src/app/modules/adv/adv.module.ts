@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { AdvRoutingModule } from './adv-routing.module';
 import { AdvPageComponent } from './components/adv-page/adv-page.component';
-
+import { SharedModule } from 'src/app/shared/modules/shared.module';
 
 @NgModule({
   declarations: [AdvPageComponent],
-  imports: [
-    CommonModule,
-    AdvRoutingModule
-  ]
+  imports: [SharedModule, AdvRoutingModule],
 })
-export class AdvModule { }
+export class AdvModule {}
