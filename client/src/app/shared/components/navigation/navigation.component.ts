@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
 import { AuthService } from '../../services/auth.service';
 import { ModalService } from '../../services/modal.service';
-import { AddItemComponent } from '../add-item/add-item.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+import { AddItemComponent } from 'src/app/modules/gallery/components/add-item/add-item.component';
 
 @Component({
   selector: 'app-navigation',
@@ -17,8 +16,7 @@ export class NavigationComponent implements OnInit {
   constructor(
     public nav: NavBarService,
     private auth: AuthService,
-    private modalService: NgbModal,
-    private router: Router
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +32,6 @@ export class NavigationComponent implements OnInit {
 
   openAddDialog(event) {
     event.stopPropagation();
-    this.modalService.open(AddItemComponent);
+    this.modalService.openAddDialog(AddItemComponent);
   }
 }

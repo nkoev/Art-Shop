@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/models/item';
+import { Item } from '../../../../models/item';
 import { ItemsService } from '../../items.service';
 
 @Component({

@@ -1,0 +1,42 @@
+<div class="form-container">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit(itemForm)">
+    <div class="form-group">
+      <label> Item Name</label>
+      <input class="form-control" formControlName="itemName" />
+      <br />
+      <label>Size</label>
+      <input class="form-control" formControlName="size" />
+      <br />
+      <label>Technics</label>
+      <input class="form-control" formControlName="technics" />
+      <br />
+      <div class="form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="exampleCheck1"
+          formControlName="toGallery"
+        />
+        <label class="form-check-label" for="exampleCheck1"
+          >Add to Gallery</label
+        >
+        <br />
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="exampleCheck1"
+          formControlName="toStore"
+        />
+        <label class="form-check-label" for="exampleCheck1">Add to Store</label>
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+      &nbsp;
+      <button type="button" class="btn btn-primary">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
