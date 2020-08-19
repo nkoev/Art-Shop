@@ -10,7 +10,7 @@ import {
   AngularFireStorage,
   AngularFireUploadTask,
 } from '@angular/fire/storage';
-import { firestore } from 'firebase';
+import { firestore } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root',
@@ -53,19 +53,10 @@ export class ItemsService {
       const imageRef = this.afStorage.ref(
         `${docRef.id}/${Math.random().toString(36).substring(2)}`
       );
-      imageRef.put(image);
+      await imageRef.put(image);
       imageRef.getDownloadURL().subscribe((url) => {
         docRef.update({ imageUrls: firestore.FieldValue.arrayUnion(url) });
       });
     }
-  }
-
-  async uploadImage(image: File, itemId: string): Promise<any> {
-    const ref = this.afStorage.ref(
-      `${itemId}/${Math.random().toString(36).substring(2)}`
-    );
-    const task = await ref.put(image);
-
-    return `gs://${task.metadata.bucket}/${task.metadata.fullPath}`;
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
 import { AuthService } from '../../services/auth.service';
-import { ModalService } from '../../services/modal.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddItemComponent } from 'src/app/modules/gallery/components/add-item/add-item.component';
 
@@ -16,7 +15,7 @@ export class NavigationComponent implements OnInit {
   constructor(
     public nav: NavBarService,
     private auth: AuthService,
-    private modalService: ModalService
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +31,6 @@ export class NavigationComponent implements OnInit {
 
   openAddDialog(event) {
     event.stopPropagation();
-    this.modalService.openAddDialog(AddItemComponent);
+    this.modalService.open(AddItemComponent);
   }
 }

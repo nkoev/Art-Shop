@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ItemsService } from '../../items.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-item',
@@ -13,7 +14,12 @@ export class AddItemComponent implements OnInit {
   itemForm: FormGroup;
   itemImages = [];
 
-  constructor(private fb: FormBuilder, private itemsService: ItemsService) {}
+  constructor(
+    private fb: FormBuilder,
+    private itemsService: ItemsService,
+    private modalService: NgbModal,
+    private activeModal: NgbActiveModal
+  ) {}
 
   ngOnInit(): void {
     this.itemForm = this.fb.group({
@@ -51,18 +57,26 @@ export class AddItemComponent implements OnInit {
   }
 
   async onSubmit(form: FormGroup): Promise<void> {
-    const item = {
-      name: form.controls.itemName.value,
-      size: form.controls.size.value,
-      technics: form.controls.technics.value,
-      imageUrls: [],
-      type: form.controls.type.value,
-      inGallery: form.controls.toGallery.value,
-      inStore: form.controls.toStore.value,
-      materials: form.controls.materials.value,
-      price: form.controls.price.value,
-    };
-    this.itemsService.addItem(item, this.itemImages);
+    if (form.valid) {
+      const item = {
+        name: form.controls.itemName.value,
+        size: form.controls.size.value,
+        technics: form.controls.technics.value,
+        imageUrls: [],
+        type: form.controls.type.value,
+        inGallery: form.controls.toGallery.value,
+        inStore: form.controls.toStore.value,
+        materials: form.controls.materials.value,
+        price: form.controls.price.value,
+      };
+      this.itemsService.addItem(item, this.itemImages);
+    } else {
+      console.log('form is invalid');
+    }
+  }
+
+  dismiss() {
+    this.activeModal.dismiss();
   }
 
   onFileChange(event) {

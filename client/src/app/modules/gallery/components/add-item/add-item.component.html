@@ -20,6 +20,8 @@
       <input class="form-control" formControlName="technics" />
       <br />
       <div>
+        <label>Images</label>
+        <br />
         <input
           id="image-upload"
           type="file"
@@ -27,7 +29,6 @@
           formControlName="images"
           (change)="onFileChange($event)"
         />
-        <button id="upload-button" class="btn btn-primary">Upload File</button>
       </div>
       <br />
       <div class="form-check">
@@ -67,7 +68,7 @@
         Submit
       </button>
       &nbsp;
-      <button type="button" class="btn btn-primary">
+      <button type="button" class="btn btn-primary" (click)="dismiss()">
         Cancel
       </button>
     </div>
