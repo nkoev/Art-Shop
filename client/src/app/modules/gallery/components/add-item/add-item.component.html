@@ -4,11 +4,31 @@
       <label> Item Name</label>
       <input class="form-control" formControlName="itemName" />
       <br />
+      <label for="exampleFormControlSelect1">Type</label>
+      <select
+        class="form-control"
+        id="exampleFormControlSelect1"
+        formControlName="type"
+      >
+        <option *ngFor="let type of types">{{ type }}</option>
+      </select>
+      <br />
       <label>Size</label>
       <input class="form-control" formControlName="size" />
       <br />
       <label>Technics</label>
       <input class="form-control" formControlName="technics" />
+      <br />
+      <div>
+        <input
+          id="image-upload"
+          type="file"
+          multiple
+          formControlName="images"
+          (change)="onFileChange($event)"
+        />
+        <button id="upload-button" class="btn btn-primary">Upload File</button>
+      </div>
       <br />
       <div class="form-check">
         <input
@@ -29,6 +49,19 @@
         />
         <label class="form-check-label" for="exampleCheck1">Add to Store</label>
       </div>
+      <br />
+      <label for="exampleFormControlSelect2">Materials</label>
+      <select
+        multiple
+        class="form-control"
+        id="exampleFormControlSelect2"
+        formControlName="materials"
+      >
+        <option *ngFor="let mat of materials">{{ mat }}</option>
+      </select>
+      <br />
+      <label> Price </label>
+      <input class="form-control" formControlName="price" />
       <br />
       <button type="submit" class="btn btn-primary">
         Submit

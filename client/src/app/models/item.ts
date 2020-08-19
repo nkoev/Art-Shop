@@ -1,6 +1,12 @@
 export class Item {
-  id: string;
   name: string;
-  image: string;
-  type: 'p' | 's' | 'c';
+  size: string;
+  technics: string;
+  imageUrls: string[];
+  type: 'Pane' | 'Sculpture' | 'Collage';
+  inGallery: boolean;
+  inStore: boolean;
+  materials: string[];
+  price: number;
+  id?: string;
 }

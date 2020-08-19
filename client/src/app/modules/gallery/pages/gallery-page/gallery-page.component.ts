@@ -15,10 +15,10 @@ export class GalleryPageComponent implements OnInit {
   constructor(private itemsService: ItemsService) {}
 
   ngOnInit(): void {
-    this.itemsService.getItems().then((items) => {
-      this.panes = items.filter(({ type }) => type === 'p');
-      this.sculptures = items.filter(({ type }) => type === 's');
-      this.collages = items.filter(({ type }) => type === 'c');
+    this.itemsService.getGalleryItems().then((items) => {
+      this.panes = items.filter(({ type }) => type === 'Pane');
+      this.sculptures = items.filter(({ type }) => type === 'Sculpture');
+      this.collages = items.filter(({ type }) => type === 'Collage');
     });
   }
 }

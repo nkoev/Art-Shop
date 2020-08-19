@@ -1,7 +1,7 @@
 <div class="container-fluid main">
   <div class="row">
     <div class="col-8 show">
-      <img class="image" [src]="item?.image" />
+      <img class="image" [src]="(item?.imageUrls)[0]" />
     </div>
     <div class="col-4 info">{{ item?.name }}</div>
   </div>
