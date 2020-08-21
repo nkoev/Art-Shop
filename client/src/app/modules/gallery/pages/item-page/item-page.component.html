@@ -1,8 +1,11 @@
 <div class="container-fluid main">
-  <div class="col-md-8 show">
-    <img class="image" [src]="(item?.imageUrls)[0]" />
+  <div class="col-md-1 choices">
+    <img class="image" [src]="item?.mainImageUrl" />
   </div>
-  <div class="col-md-4 info">
+  <div class="col-md-8 show">
+    <img class="image" [src]="item?.mainImageUrl" />
+  </div>
+  <div class="col-md-3 info">
     <app-item-info [item]="item"></app-item-info>
   </div>
 

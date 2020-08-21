@@ -1,6 +1,6 @@
 <div class="box" [routerLink]="['item', item.id]">
   {{ item.name }}
   <div class="row">
-    <img [src]="item.imageUrls[0]" class="item-image" />
+    <img [src]="item?.mainImageUrl" class="item-image" />
   </div>
 </div>

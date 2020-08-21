@@ -12,7 +12,8 @@ export class AddItemComponent implements OnInit {
   types = ['Pane', 'Sculpture', 'Collage'];
   materials = ['Canava', 'Paper', 'Plastic', 'Some'];
   itemForm: FormGroup;
-  itemImages = [];
+  itemImages: File[] = [];
+  mainImage: File;
 
   constructor(
     private fb: FormBuilder,
@@ -27,6 +28,7 @@ export class AddItemComponent implements OnInit {
       type: [null, [Validators.required]],
       size: [null, [Validators.required]],
       technics: [null, [Validators.required]],
+      mainImage: null,
       images: null,
       toGallery: false,
       toStore: false,
@@ -41,6 +43,7 @@ export class AddItemComponent implements OnInit {
         name: form.controls.itemName.value,
         size: form.controls.size.value,
         technics: form.controls.technics.value,
+        mainImageUrl: null,
         imageUrls: [],
         type: form.controls.type.value,
         inGallery: form.controls.toGallery.value,
@@ -48,7 +51,7 @@ export class AddItemComponent implements OnInit {
         materials: form.controls.materials.value,
         price: form.controls.price.value,
       };
-      this.itemsService.addItem(item, this.itemImages);
+      this.itemsService.addItem(item, this.mainImage, this.itemImages);
     } else {
       console.log('form is invalid');
     }
@@ -58,7 +61,11 @@ export class AddItemComponent implements OnInit {
     this.activeModal.dismiss();
   }
 
-  onFileChange(event) {
+  onImagesChange(event) {
     this.itemImages = event.target.files;
+  }
+
+  onMainImageChange(event) {
+    this.mainImage = event.target.files[0];
   }
 }

@@ -20,6 +20,16 @@
       <input class="form-control" formControlName="technics" />
       <br />
       <div>
+        <label>Main image</label>
+        <br />
+        <input
+          id="image-upload"
+          type="file"
+          formControlName="mainImage"
+          (change)="onMainImageChange($event)"
+        />
+      </div>
+      <div>
         <label>Images</label>
         <br />
         <input
@@ -27,7 +37,7 @@
           type="file"
           multiple
           formControlName="images"
-          (change)="onFileChange($event)"
+          (change)="onImagesChange($event)"
         />
       </div>
       <br />

@@ -18,3 +18,16 @@ body
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap'
+
+.container, .container-fluid, .col
+  padding: 0px
+
+@for $i from 1 through 12
+  .col-#{$i}
+    padding: 0px
+  .col-sm-#{$i}
+    padding: 0px
+  .col-md-#{$i}
+    padding: 0px
+  .col-mlg-#{$i}
+    padding: 0px

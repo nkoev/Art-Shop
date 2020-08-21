@@ -46,8 +46,20 @@ export class ItemsService {
     return { ...item.data(), id: item.id } as Item;
   }
 
-  async addItem(item: Item, itemImages: File[]): Promise<void> {
+  async addItem(
+    item: Item,
+    mainImage: File,
+    itemImages: File[]
+  ): Promise<void> {
     const docRef = await this.itemsCol.add(item);
+
+    const mainImageRef = this.afStorage.ref(
+      `${docRef.id}/${Math.random().toString(36).substring(2)}`
+    );
+    await mainImageRef.put(mainImage);
+    mainImageRef.getDownloadURL().subscribe((url) => {
+      docRef.update({ mainImageUrl: url });
+    });
 
     for (const image of itemImages) {
       const imageRef = this.afStorage.ref(
