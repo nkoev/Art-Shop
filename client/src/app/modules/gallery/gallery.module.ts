@@ -6,6 +6,7 @@ import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
+import { ItemInfoComponent } from './components/item-info/item-info.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SharedModule } from 'src/app/shared/modules/shared.module';
     ItemPageComponent,
     EditItemComponent,
     AddItemComponent,
+    ItemInfoComponent,
   ],
   imports: [GalleryRoutingModule, SharedModule],
 })

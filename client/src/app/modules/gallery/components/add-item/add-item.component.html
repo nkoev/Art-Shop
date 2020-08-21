@@ -51,18 +51,20 @@
         <label class="form-check-label" for="exampleCheck1">Add to Store</label>
       </div>
       <br />
-      <label for="exampleFormControlSelect2">Materials</label>
-      <select
-        multiple
-        class="form-control"
-        id="exampleFormControlSelect2"
-        formControlName="materials"
-      >
-        <option *ngFor="let mat of materials">{{ mat }}</option>
-      </select>
-      <br />
-      <label> Price </label>
-      <input class="form-control" formControlName="price" />
+      <div *ngIf="itemForm.controls.toStore.value">
+        <label for="exampleFormControlSelect2">Materials</label>
+        <select
+          multiple
+          class="form-control"
+          id="exampleFormControlSelect2"
+          formControlName="materials"
+        >
+          <option *ngFor="let mat of materials">{{ mat }}</option>
+        </select>
+        <br />
+        <label> Price </label>
+        <input class="form-control" formControlName="price" />
+      </div>
       <br />
       <button type="submit" class="btn btn-primary">
         Submit

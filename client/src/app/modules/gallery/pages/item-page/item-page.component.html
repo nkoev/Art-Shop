@@ -1,9 +1,10 @@
 <div class="container-fluid main">
-  <div class="row">
-    <div class="col-8 show">
-      <img class="image" [src]="(item?.imageUrls)[0]" />
-    </div>
-    <div class="col-4 info">{{ item?.name }}</div>
+  <div class="col-md-8 show">
+    <img class="image" [src]="(item?.imageUrls)[0]" />
   </div>
+  <div class="col-md-4 info">
+    <app-item-info [item]="item"></app-item-info>
+  </div>
+
   <app-edit-item *ngIf="isLoggedIn"></app-edit-item>
 </div>

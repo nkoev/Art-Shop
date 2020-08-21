@@ -23,31 +23,10 @@ export class AddItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemForm = this.fb.group({
-      itemName: [
-        null,
-        [
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern('^[a-zA-Z][a-zA-Z\\- ]*'),
-        ],
-      ],
+      itemName: [null, [Validators.required]],
       type: [null, [Validators.required]],
-      size: [
-        null,
-        [
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern('^[a-zA-Z][a-zA-Z\\- ]*'),
-        ],
-      ],
-      technics: [
-        null,
-        [
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern('^[a-zA-Z][a-zA-Z\\- ]*'),
-        ],
-      ],
+      size: [null, [Validators.required]],
+      technics: [null, [Validators.required]],
       images: null,
       toGallery: false,
       toStore: false,
