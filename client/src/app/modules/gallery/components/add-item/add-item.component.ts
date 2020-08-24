@@ -52,6 +52,7 @@ export class AddItemComponent implements OnInit {
         price: form.controls.price.value,
       };
       this.itemsService.addItem(item, this.mainImage, this.itemImages);
+      this.dismiss();
     } else {
       console.log('form is invalid');
     }

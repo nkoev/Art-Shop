@@ -4,9 +4,9 @@
   </div>
   <div class="images-container">
     <img class="image" [src]="item?.mainImageUrl" />
-    <img class="image" [src]="item?.mainImageUrl" />
-    <img class="image" [src]="item?.mainImageUrl" />
-    <img class="image" [src]="item?.mainImageUrl" />
+    <div *ngFor="let image of item?.imageUrls">
+      <img class="image" [src]="image" />
+    </div>
   </div>
   <div class="info-container">
     <app-item-info [item]="item"></app-item-info>

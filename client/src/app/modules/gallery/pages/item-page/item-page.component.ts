@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ViewChild,
-  AfterViewInit,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ItemsService } from '../../items.service';
 import { Item } from 'src/app/models/item';
 import { ActivatedRoute } from '@angular/router';
@@ -16,8 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.sass'],
 })
-export class ItemPageComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild('mainImage') mainImage;
+export class ItemPageComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean;
   item: Item;
 
@@ -33,14 +26,8 @@ export class ItemPageComponent implements OnInit, OnDestroy, AfterViewInit {
       this.isLoggedIn = res;
     });
     this.navBarService.setLink('gallery');
-  }
-
-  ngAfterViewInit() {
-    console.log(this.mainImage);
     this.itemsService.getItem(this.route.snapshot.params.id).then((item) => {
       this.item = item;
-      this.mainImage.nativeElement.style.backgroundImage =
-        'url(' + this.item.mainImageUrl + ')';
     });
   }
 
