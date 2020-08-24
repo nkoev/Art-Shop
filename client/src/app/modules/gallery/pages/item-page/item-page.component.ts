@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class ItemPageComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean;
   item: Item;
+  mainImageUrl: string;
+  allImageUrls: string[];
 
   constructor(
     private itemsService: ItemsService,
@@ -26,12 +28,16 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       this.isLoggedIn = res;
     });
     this.navBarService.setLink('gallery');
+    this.navBarService.showEditItem();
     this.itemsService.getItem(this.route.snapshot.params.id).then((item) => {
       this.item = item;
+      this.mainImageUrl = item.mainImageUrl;
+      this.allImageUrls = [item.mainImageUrl, ...item.imageUrls];
     });
   }
 
   ngOnDestroy(): void {
     this.navBarService.setLink('');
+    this.navBarService.hideEditItem();
   }
 }

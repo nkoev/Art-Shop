@@ -4,17 +4,39 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NavBarService {
-  public visible = true;
-  public link = '';
+  private _visible = true;
+  private _link = '';
+  private _editItem = false;
 
   constructor() {}
+
+  get visible() {
+    return this._visible;
+  }
+  get link() {
+    return this._link;
+  }
+  get editItem() {
+    return this._editItem;
+  }
+
   show() {
-    this.visible = true;
+    this._visible = true;
   }
+
   hide() {
-    this.visible = false;
+    this._visible = false;
   }
+
   setLink(path: string) {
-    this.link = path;
+    this._link = path;
+  }
+
+  showEditItem() {
+    this._editItem = true;
+  }
+
+  hideEditItem() {
+    this._editItem = false;
   }
 }

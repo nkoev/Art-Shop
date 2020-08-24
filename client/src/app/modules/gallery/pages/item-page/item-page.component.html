@@ -1,15 +1,13 @@
 <div class="container-fluid main">
   <div class="main-image-container">
-    <img class="main-image" [src]="item?.mainImageUrl" />
+    <img class="main-image" [src]="mainImageUrl" />
   </div>
   <div class="images-container">
-    <img class="image" [src]="item?.mainImageUrl" />
-    <div *ngFor="let image of item?.imageUrls">
-      <img class="image" [src]="image" />
+    <div *ngFor="let image of allImageUrls">
+      <img class="image" [src]="image" (click)="mainImageUrl = image" />
     </div>
   </div>
   <div class="info-container">
     <app-item-info [item]="item"></app-item-info>
   </div>
-  <app-edit-item *ngIf="isLoggedIn"></app-edit-item>
 </div>

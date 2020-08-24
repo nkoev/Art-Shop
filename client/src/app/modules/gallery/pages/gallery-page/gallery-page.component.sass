@@ -10,6 +10,12 @@ h1
   text-align: center
   padding: 0
   margin-top: 5vh
+  filter: grayscale(100%)
+
+.category:hover
+  filter: grayscale(0%)
+  animation-name: fade-in
+  animation-duration: 3s
 
 .row
   width: 100%
@@ -27,3 +33,15 @@ h1
   .category
     height: 87vh
     overflow: auto
+
+@keyframes fade-in
+  0%
+    filter: grayscale(100%)
+  100%
+    filter: grayscale(0%)
+
+@keyframes fade-out
+  0%
+    filter: grayscale(0%)
+  100%
+    filter: grayscale(100%)
