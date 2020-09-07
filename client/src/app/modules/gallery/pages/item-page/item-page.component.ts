@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { ItemsService } from '../../items.service';
 import { Item } from 'src/app/models/item';
 import { ActivatedRoute } from '@angular/router';
@@ -20,7 +20,8 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     private itemsService: ItemsService,
     private navBarService: NavBarService,
     private route: ActivatedRoute,
-    private auth: AuthService
+    private auth: AuthService,
+    private el: ElementRef
   ) {}
 
   ngOnInit(): void {
@@ -39,5 +40,10 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.navBarService.setLink('');
     this.navBarService.hideEditItem();
+  }
+
+  updateMainImage(imageUrl: string) {
+    this.mainImageUrl = imageUrl;
+    this.el.nativeElement.querySelector('.ngxImageZoomFull').src = imageUrl;
   }
 }

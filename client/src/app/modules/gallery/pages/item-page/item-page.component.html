@@ -1,16 +1,11 @@
 <div class="container-fluid main">
-  <!-- <div class="main-image-container">
-    <img class="main-image" [src]="mainImageUrl" />
-  </div> -->
   <lib-ngx-image-zoom
     class="main-image-container"
     [thumbImage]="mainImageUrl"
-    zoomMode="hover"
-    magnification="2"
   ></lib-ngx-image-zoom>
   <div class="images-container">
     <div *ngFor="let image of allImageUrls">
-      <img class="image" [src]="image" (click)="mainImageUrl = image" />
+      <img class="image" [src]="image" (click)="updateMainImage(image)" />
     </div>
   </div>
   <div class="info-container">
