@@ -21,13 +21,18 @@
   cursor: pointer
 
 .main-image-container
+  position: relative
   width: 48vw
   height: 90vh
   margin: 1vh 1vw
   display: flex
   overflow: hidden
 
-.main-image
+::ng-deep.ngxImageZoomContainer
+  width: 48vw !important
+  height: auto !important
+
+::ng-deep.ngxImageZoomThumbnail
   width: 100%
   margin: auto
   background-size: cover
@@ -65,3 +70,6 @@
   .info-container
     width: 100vw
     height: auto
+  ::ng-deep.ngxImageZoomContainer
+    width: 100% !important
+    height: 100% !important
