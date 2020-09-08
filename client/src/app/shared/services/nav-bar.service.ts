@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Item } from 'src/app/models/item';
 
 @Injectable({
   providedIn: 'root',
@@ -7,6 +8,7 @@ export class NavBarService {
   private _visible = true;
   private _link = '';
   private _editItem = false;
+  private _currentItem: Item = null;
 
   constructor() {}
 
@@ -19,6 +21,9 @@ export class NavBarService {
   get editItem() {
     return this._editItem;
   }
+  get currentItem() {
+    return this._currentItem;
+  }
 
   show() {
     this._visible = true;
@@ -30,6 +35,10 @@ export class NavBarService {
 
   setLink(path: string) {
     this._link = path;
+  }
+
+  setCurrentItem(item: Item) {
+    this._currentItem = item;
   }
 
   showEditItem() {

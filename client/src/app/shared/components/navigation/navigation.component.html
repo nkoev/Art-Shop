@@ -1,7 +1,5 @@
 <div class="container-fluid home" [routerLink]="nav.link" *ngIf="nav.visible">
-  <div class="nav-direct">
-    &lt;&lt;&lt;
-  </div>
+  <div class="nav-direct">&lt;&lt;&lt;</div>
   <div class="container-fluid admin-controls">
     <button
       class="btn btn-primary"
@@ -10,7 +8,11 @@
     >
       Add Items
     </button>
-    <button class="btn btn-primary" *ngIf="isLoggedIn && nav.editItem">
+    <button
+      class="btn btn-primary"
+      *ngIf="isLoggedIn && nav.editItem"
+      (click)="openEditDialog($event)"
+    >
       Edit Item
     </button>
     <button class="btn btn-danger" (click)="logout($event)" *ngIf="isLoggedIn">

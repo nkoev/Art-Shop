@@ -32,6 +32,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     this.navBarService.showEditItem();
     this.itemsService.getItem(this.route.snapshot.params.id).then((item) => {
       this.item = item;
+      this.navBarService.setCurrentItem(item);
       this.mainImageUrl = item.mainImageUrl;
       this.allImageUrls = [item.mainImageUrl, ...item.imageUrls];
     });
