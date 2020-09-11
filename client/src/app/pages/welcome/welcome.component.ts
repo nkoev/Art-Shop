@@ -13,10 +13,10 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   constructor(private nav: NavBarService) {}
 
   ngOnInit(): void {
-    this.nav.hide();
+    this.nav.showNav = false;
   }
   ngOnDestroy(): void {
-    this.nav.show();
+    this.nav.showNav = true;
   }
 
   showMenu() {

@@ -6,6 +6,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { AboutComponent } from './pages/about/about.component';
 import { SharedModule } from './shared/modules/shared.module';
 import { FirestoreModule } from './shared/modules/firestore.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, WelcomeComponent, AboutComponent],

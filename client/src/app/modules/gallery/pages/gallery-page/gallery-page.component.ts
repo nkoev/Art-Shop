@@ -16,6 +16,9 @@ export class GalleryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemsService.getGalleryItems().then((items) => {
+      location.pathname.split('/')[1] === 'store'
+        ? (items = items.filter((item) => item.inStore))
+        : (items = items.filter((item) => item.inGallery));
       this.panes = items.filter(({ type }) => type === 'Pane');
       this.sculptures = items.filter(({ type }) => type === 'Sculpture');
       this.collages = items.filter(({ type }) => type === 'Collage');

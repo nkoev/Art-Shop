@@ -12,35 +12,37 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class ItemPageComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean;
+  isInStore: boolean;
   item: Item;
   mainImageUrl: string;
   allImageUrls: string[];
 
   constructor(
+    public nav: NavBarService,
     private itemsService: ItemsService,
-    private navBarService: NavBarService,
     private route: ActivatedRoute,
     private auth: AuthService,
     private el: ElementRef
   ) {}
 
   ngOnInit(): void {
+    this.isInStore = location.pathname.split('/')[1] === 'store';
     this.auth.isLoggedIn$.subscribe((res) => {
       this.isLoggedIn = res;
     });
-    this.navBarService.setLink('gallery');
-    this.navBarService.showEditItem();
+    this.nav.link = 'gallery';
+    this.nav.showEditItem = true;
     this.itemsService.getItem(this.route.snapshot.params.id).then((item) => {
       this.item = item;
-      this.navBarService.setCurrentItem(item);
+      this.nav.currentItem = item;
       this.mainImageUrl = item.mainImageUrl;
       this.allImageUrls = [item.mainImageUrl, ...item.imageUrls];
     });
   }
 
   ngOnDestroy(): void {
-    this.navBarService.setLink('');
-    this.navBarService.hideEditItem();
+    this.nav.link = '';
+    this.nav.showEditItem = false;
   }
 
   updateMainImage(imageUrl: string) {

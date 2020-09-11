@@ -8,11 +8,4 @@
     <div class="technics">{{ item?.technics }}</div>
     <div class="label">Technics</div>
   </div>
-  <button
-    *ngIf="item?.inStore"
-    class="btn btn-danger"
-    [routerLink]="'store/item' + item.id"
-  >
-    Buy me
-  </button>
 </div>

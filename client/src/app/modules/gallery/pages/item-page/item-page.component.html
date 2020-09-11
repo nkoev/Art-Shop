@@ -9,6 +9,7 @@
     </div>
   </div>
   <div class="info-container">
-    <app-item-info [item]="item"></app-item-info>
+    <app-item-info *ngIf="!isInStore" [item]="item"></app-item-info>
+    <app-store-info *ngIf="isInStore" [item]="item"></app-store-info>
   </div>
 </div>

@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'store',
     loadChildren: () =>
-      import('./modules/store/store.module').then((m) => m.StoreModule),
+      import('./modules/gallery/gallery.module').then((m) => m.GalleryModule),
   },
   {
     path: 'login',
