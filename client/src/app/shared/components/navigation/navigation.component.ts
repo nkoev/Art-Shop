@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
   isLoggedIn: boolean;
 
   constructor(
-    public nav: NavBarService,
+    public navService: NavBarService,
     private auth: AuthService,
     private modalService: NgbModal
   ) {}

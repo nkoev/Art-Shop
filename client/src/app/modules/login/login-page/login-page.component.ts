@@ -10,10 +10,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   constructor(private navService: NavBarService) {}
 
   ngOnInit(): void {
-    this.navService.hide();
+    this.navService.showNav = false;
   }
 
   ngOnDestroy(): void {
-    this.navService.show();
+    this.navService.showNav = true;
   }
 }

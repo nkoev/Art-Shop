@@ -1,4 +1,8 @@
-<div class="container-fluid home" [routerLink]="nav.link" *ngIf="nav.showNav">
+<div
+  class="container-fluid home"
+  [routerLink]="navService.link"
+  *ngIf="navService.showNav"
+>
   <div class="nav-direct">&lt;&lt;&lt;</div>
   <div class="container-fluid admin-controls">
     <button
@@ -10,7 +14,7 @@
     </button>
     <button
       class="btn btn-primary"
-      *ngIf="isLoggedIn && nav.showEditItem"
+      *ngIf="isLoggedIn && navService.showEditItem"
       (click)="openEditDialog($event)"
     >
       Edit Item

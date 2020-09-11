@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item } from 'src/app/models/item';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-info',
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 export class ItemInfoComponent implements OnInit {
   @Input() item: Item;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

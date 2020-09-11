@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Item } from 'src/app/models/item';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -13,28 +12,28 @@ export class NavBarService {
 
   constructor() {}
 
-  get showNav() {
+  get showNav(): boolean {
     return this._showNav;
   }
   set showNav(show: boolean) {
     this._showNav = show;
   }
 
-  get link() {
+  get link(): string {
     return this._link;
   }
   set link(path: string) {
     this._link = path;
   }
 
-  get showEditItem() {
+  get showEditItem(): boolean {
     return this._showEditItem;
   }
   set showEditItem(show: boolean) {
     this._showEditItem = show;
   }
 
-  get currentItem() {
+  get currentItem(): Item {
     return this._currentItem;
   }
   set currentItem(item: Item) {

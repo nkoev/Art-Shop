@@ -18,7 +18,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   allImageUrls: string[];
 
   constructor(
-    public nav: NavBarService,
+    public navService: NavBarService,
     private itemsService: ItemsService,
     private route: ActivatedRoute,
     private auth: AuthService,
@@ -30,19 +30,19 @@ export class ItemPageComponent implements OnInit, OnDestroy {
     this.auth.isLoggedIn$.subscribe((res) => {
       this.isLoggedIn = res;
     });
-    this.nav.link = 'gallery';
-    this.nav.showEditItem = true;
+    this.navService.link = 'gallery';
+    this.navService.showEditItem = true;
     this.itemsService.getItem(this.route.snapshot.params.id).then((item) => {
       this.item = item;
-      this.nav.currentItem = item;
+      this.navService.currentItem = item;
       this.mainImageUrl = item.mainImageUrl;
       this.allImageUrls = [item.mainImageUrl, ...item.imageUrls];
     });
   }
 
   ngOnDestroy(): void {
-    this.nav.link = '';
-    this.nav.showEditItem = false;
+    this.navService.link = '';
+    this.navService.showEditItem = false;
   }
 
   updateMainImage(imageUrl: string) {
