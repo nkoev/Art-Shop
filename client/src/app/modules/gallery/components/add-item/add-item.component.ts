@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ValidationErrors,
+} from '@angular/forms';
 import { ItemsService } from '../../items.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-item',
@@ -18,14 +24,14 @@ export class AddItemComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private itemsService: ItemsService,
-    private modalService: NgbModal,
+    private router: Router,
     private activeModal: NgbActiveModal
   ) {}
 
   ngOnInit(): void {
     this.itemForm = this.fb.group({
       itemName: [null, [Validators.required]],
-      type: [null, [Validators.required]],
+      type: ['Pane', [Validators.required]],
       size: [null, [Validators.required]],
       technics: [null, [Validators.required]],
       mainImage: null,
@@ -51,10 +57,18 @@ export class AddItemComponent implements OnInit {
         materials: form.controls.materials.value,
         price: form.controls.price.value,
       };
-      this.itemsService.addItem(item, this.mainImage, this.itemImages);
-      this.dismiss();
+      this.itemsService
+        .addItem(item, this.mainImage, this.itemImages)
+        .then(() => {
+          this.dismiss();
+        });
     } else {
-      console.log('form is invalid');
+      for (let key in form.controls) {
+        let errors: ValidationErrors = form.get(key).errors;
+        if (errors) {
+          console.log(key, errors);
+        }
+      }
     }
   }
 

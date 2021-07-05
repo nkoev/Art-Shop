@@ -71,4 +71,8 @@ export class ItemsService {
       });
     }
   }
+
+  deleteItem(id: string): Promise<void> {
+    return this.itemsCol.doc(id).ref.delete();
+  }
 }
