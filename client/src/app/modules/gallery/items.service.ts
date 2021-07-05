@@ -72,6 +72,34 @@ export class ItemsService {
     }
   }
 
+  async updateItem(
+    id: string,
+    item: Item,
+    mainImage: File,
+    itemImages: File[]
+  ): Promise<void> {
+    const docRef = this.itemsCol.doc(id).ref;
+    return await docRef.update(item);
+
+    // const mainImageRef = this.afStorage.ref(
+    //   `${docRef.id}/${Math.random().toString(36).substring(2)}`
+    // );
+    // await mainImageRef.put(mainImage);
+    // mainImageRef.getDownloadURL().subscribe((url) => {
+    //   docRef.update({ mainImageUrl: url });
+    // });
+
+    // for (const image of itemImages) {
+    //   const imageRef = this.afStorage.ref(
+    //     `${docRef.id}/${Math.random().toString(36).substring(2)}`
+    //   );
+    //   await imageRef.put(image);
+    //   imageRef.getDownloadURL().subscribe((url) => {
+    //     docRef.update({ imageUrls: firestore.FieldValue.arrayUnion(url) });
+    //   });
+    // }
+  }
+
   deleteItem(id: string): Promise<void> {
     return this.itemsCol.doc(id).ref.delete();
   }

@@ -24,7 +24,6 @@ export class AddItemComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private itemsService: ItemsService,
-    private router: Router,
     private activeModal: NgbActiveModal
   ) {}
 
