@@ -21,8 +21,6 @@
   background-color: rgba(0, 0, 0, 0.5)
   color: rgba(255, 255, 255)
   cursor: pointer
-  animation-name: fade
-  animation-duration: 3s
 
 #ptp
   display: flex
@@ -37,7 +35,16 @@
 #long
   display: none
 
+#art 
+  height: 100%
+  opacity: 0%
+  animation-name: fade
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 1s
+
 #store
+  opacity: 0%
   width: 100%
   height: 100%
   display: flex
@@ -51,9 +58,51 @@
   cursor: pointer
   animation-name: fade
   animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 5s
+
+#adv
+  opacity: 0%
+  animation-name: fade
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 3s
+
+#about
+  opacity: 0%
+  animation-name: fade
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 2s
+
+#text-store
+  opacity: 0%
+  animation-name: blitz
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 6s
+  animation-timing-function: step-end
 
 @keyframes fade
+  from
+    opacity: 0%
+  to 
+    opacity: 100% 
+
+@keyframes blitz
   0%
+    opacity: 0%
+  10%
+    opacity: 100%
+  15%
+    opacity: 0%
+  40%
+    opacity: 100%
+  50%
+    opacity: 0%
+  55%
+    opacity: 100%
+  95%
     opacity: 0%
   100%
     opacity: 100%

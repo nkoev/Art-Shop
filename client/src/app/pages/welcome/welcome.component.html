@@ -5,29 +5,24 @@
       <span id="long">PTPETROV</span>
     </div>
     <div class="col"></div>
-    <div class="col"></div>
-  </div>
-  <div class="row">
-    <div class="col"></div>
     <div class="col">
-      <div
-        class="menu"
-        *ngIf="menu"
-        (mouseover)="showStore()"
-        routerLink="gallery"
-      >
-        ART
-      </div>
-    </div>
-    <div class="col">
-      <div id="store" *ngIf="store" routerLink="store">
+      <div id="store" routerLink="store">
         <span id="text-store">STORE</span>
       </div>
     </div>
   </div>
   <div class="row">
+    <div class="col"></div>
     <div class="col">
-      <div class="menu" *ngIf="menu" routerLink="adv">ADV</div>
+      <div id="art" class="menu" (mouseover)="showStore()" routerLink="gallery">
+        ART
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="menu" id="adv" routerLink="adv">ADV</div>
     </div>
     <div class="col"></div>
     <div class="col"></div>
@@ -36,7 +31,7 @@
     <div class="col"></div>
     <div class="col"></div>
     <div class="col">
-      <div class="menu" *ngIf="menu" routerLink="about">About</div>
+      <div class="menu" id="about" routerLink="about">About</div>
     </div>
   </div>
 </div>
