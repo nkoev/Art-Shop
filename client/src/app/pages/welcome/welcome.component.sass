@@ -11,77 +11,64 @@
 .col
   height: 100%
 
-.menu
+.menu-item
   display: flex
   align-content: center
   align-items: center
   justify-content: center
-  font-size: xx-large
+  font-size: 3vw
   font-family: 'Rowdies', cursive
   background-color: rgba(0, 0, 0, 0.5)
   color: rgba(255, 255, 255)
   cursor: pointer
 
 #ptp
-  display: flex
-  align-content: center
-  align-items: center
-  justify-content: center
-  font-size: xx-large
-  font-family: 'Rowdies', cursive
-  background-color: rgba(0, 0, 0, 0.5)
-  color: rgba(255, 255, 255)
+  cursor: default
 
 #long
   display: none
 
 #art 
-  height: 100%
   opacity: 0%
+  height: 50%
+  width: 100%
+  position: absolute
+  bottom: 0
   animation-name: fade
   animation-duration: 3s
   animation-fill-mode: forwards
-  animation-delay: 1s
 
 #store
-  opacity: 0%
-  width: 100%
   height: 100%
-  display: flex
-  align-content: center
-  align-items: center
-  justify-content: center
-  font-size: xx-large
-  font-family: 'Rowdies', cursive
-  background-color: rgba(0, 0, 0, 0.5)
-  color: yellow
-  cursor: pointer
-  animation-name: fade
-  animation-duration: 3s
-  animation-fill-mode: forwards
-  animation-delay: 5s
-
-#adv
   opacity: 0%
   animation-name: fade
   animation-duration: 3s
   animation-fill-mode: forwards
   animation-delay: 3s
 
-#about
-  opacity: 0%
-  animation-name: fade
-  animation-duration: 3s
-  animation-fill-mode: forwards
-  animation-delay: 2s
-
-#text-store
-  opacity: 0%
+#store-text
+  color: grey
   animation-name: blitz
   animation-duration: 3s
   animation-fill-mode: forwards
   animation-delay: 6s
   animation-timing-function: step-end
+
+#adv
+  opacity: 0%
+  height: 50%
+  animation-name: fade
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 2s
+
+#about
+  opacity: 0%
+  animation-name: fade
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-delay: 1s
+
 
 @keyframes fade
   from
@@ -91,21 +78,35 @@
 
 @keyframes blitz
   0%
-    opacity: 0%
-  10%
-    opacity: 100%
+    color: grey
+    text-shadow: none
+  3%
+    color: yellow
+    text-shadow: 0px 0px 4px yellow
   15%
-    opacity: 0%
-  40%
-    opacity: 100%
+    color: grey
+    text-shadow: none
+  30%
+    color: yellow
+    text-shadow: 0px 0px 4px yellow
   50%
-    opacity: 0%
-  55%
-    opacity: 100%
+    color: grey
+    text-shadow: none
+  53%
+    color: yellow
+    text-shadow: 0px 0px 4px yellow
+  90%
+    color: grey
+    text-shadow: none
   95%
-    opacity: 0%
+    color: yellow
+    text-shadow: 0px 0px 4px yellow
+  97%
+    color: grey
+    text-shadow: none
   100%
-    opacity: 100%
+    color: yellow
+    text-shadow: 0px 0px 4px yellow
 
 @media screen and ( min-width: 500px )
   #long
@@ -114,5 +115,5 @@
     display: none
 
 @media screen and ( max-width: 500px )
-  #text-store
-    transform: rotate(270deg)
+  .menu-item
+    font-size: 8vw

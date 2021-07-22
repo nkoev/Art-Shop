@@ -1,20 +1,25 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col" id="ptp" (mouseover)="showMenu()">
+    <div id="ptp" class="col menu-item" (mouseover)="showMenu()">
       <span id="short">PTP</span>
       <span id="long">PTPETROV</span>
     </div>
     <div class="col"></div>
     <div class="col">
-      <div id="store" routerLink="store">
-        <span id="text-store">STORE</span>
+      <div id="store" class="menu-item" routerLink="store">
+        <span id="store-text">STORE</span>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col"></div>
     <div class="col">
-      <div id="art" class="menu" (mouseover)="showStore()" routerLink="gallery">
+      <div
+        id="art"
+        class="menu-item"
+        (mouseover)="showStore()"
+        routerLink="gallery"
+      >
         ART
       </div>
     </div>
@@ -22,7 +27,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <div class="menu" id="adv" routerLink="adv">ADV</div>
+      <div class="menu-item" id="adv" routerLink="adv">ADV</div>
     </div>
     <div class="col"></div>
     <div class="col"></div>
@@ -31,7 +36,7 @@
     <div class="col"></div>
     <div class="col"></div>
     <div class="col">
-      <div class="menu" id="about" routerLink="about">About</div>
+      <div class="menu-item" id="about" routerLink="about">About</div>
     </div>
   </div>
 </div>
